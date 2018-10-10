@@ -1,8 +1,5 @@
 pipeline {
   agent any
-  environment {
-  BUILD_HOME = '/path/goes/here'
-  }
   stages {
     stage('Compile Code') {
       steps {
@@ -11,7 +8,7 @@ pipeline {
     }
     stage('Upload to S3') {
       steps {
-        sh 'aws s3 cp target s3://aa407-main --recursive'
+        sh 'echo upload to S3'
       }
     }
     stage('Spin up tidal ') {
@@ -25,9 +22,7 @@ pipeline {
       }
     }
   }
-    post {
-  always {
-  cleanWs()
-}
-}
+  environment {
+    BUILD_HOME = '/path/goes/here'
+  }
 }
