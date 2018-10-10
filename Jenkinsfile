@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Compile Code') {
       steps {
-        sh 'mvn package'
+        sh '/Users/alimia/apache-maven-3.5.4/bin/mvn package'
       }
     }
     stage('Upload to S3') {
