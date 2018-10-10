@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('Compile Code') {
       steps {
-        sh 'mvn'
+        sh 'echo mvn'
       }
     }
     stage('Upload to S3') {
