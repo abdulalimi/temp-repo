@@ -1,8 +1,5 @@
 pipeline {
   agent any
-   environment {
-    BUILD_HOME = '/path/goes/here'
-  }
   stages {
     stage('Compile Code') {
       steps {
@@ -25,9 +22,14 @@ pipeline {
       }
     }
   }
-   post {
-  always {
-  cleanWs()
-}
-}
+  environment {
+    BUILD_HOME = '/path/goes/here'
+  }
+  post {
+    always {
+      cleanWs()
+
+    }
+
+  }
 }
