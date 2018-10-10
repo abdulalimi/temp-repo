@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Upload to S3') {
       steps {
-        sh 'aws s3 cp target s3://aa-407-main --recursive'
+        sh 'aws s3 cp target s3://aa407-main --recursive'
       }
     }
     stage('Spin up tidal ') {
