@@ -1,35 +1,8 @@
-pipeline {
-  agent any
-  stages {
-    stage('Compile Code') {
-      steps {
-        sh '/Users/alimia/apache-maven-3.5.4/bin/mvn package'
-      }
+node {
+    dir('RepoOne') {
+        git url: 'https://github.com/abdulalimi/test-repo.git'
     }
-    stage('Upload to S3') {
-      steps {
-        sh 'aws s3 cp target s3://aa407-main --recursive'
-      }
+    dir('RepoTwo') {
+        git url: 'https://github.com/abdulalimi/temp-repo.git'
     }
-    stage('Spin up tidal ') {
-      steps {
-        sh 'echo tidal instance spinning up'
-      }
-    }
-    stage('Execute Code') {
-      steps {
-        sh 'echo code executing'
-      }
-    }
-  }
-  environment {
-    BUILD_HOME = '/path/goes/here'
-  }
-  post {
-    always {
-      cleanWs()
-
-    }
-
-  }
 }
