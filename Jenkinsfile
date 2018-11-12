@@ -1,3 +1,16 @@
+def getAWSProfile(String env) {
+  def getAWSProfile
+  switch(env) {
+    case "dev":
+      profile = "dl-dev"
+      break
+    case "e2e":
+      profile = "dl-e2e"
+      break
+  }
+  profile
+}
+
 node() {
         stage('Checkout Source') {
             checkout scm
