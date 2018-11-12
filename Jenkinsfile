@@ -15,4 +15,9 @@ node() {
               sh './generate-config-files.sh'
 }
     }
+        stage('Build') {
+              steps {
+        sh 'mvn clean install'
+      }
+    }
 }
