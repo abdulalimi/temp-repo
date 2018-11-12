@@ -8,4 +8,5 @@ node() {
         dir('RepoTwo') {
             git url: 'https://github.com/abdulalimi/temp-repo.git'
         }
+    }
 }
