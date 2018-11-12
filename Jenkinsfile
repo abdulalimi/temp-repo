@@ -9,4 +9,9 @@ node() {
             git url: 'https://github.com/abdulalimi/temp-repo.git'
         }
     }
+        stage('Generate Config Files') {
+            dir ('RepoTwo/scripts') { 
+              sh('generate-config-files.sh')
+}
+    }
 }
