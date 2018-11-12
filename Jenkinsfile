@@ -31,4 +31,10 @@ node() {
         stage('Build') {
         sh 'mvn clean install'
     }
+        stage('Push artifacts to S3') {
+            dir ('RepoTwo/scripts') {
+              sh "chmod -R +x $WORKSPACE/RepoTwo/scripts"
+              sh './push_to_s3.sh'
+}
+    }
 }
