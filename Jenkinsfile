@@ -10,7 +10,8 @@ node() {
         }
     }
         stage('Generate Config Files') {
-            dir ('RepoTwo/scripts') { 
+            dir ('RepoTwo/scripts') {
+              sh "chmod -R +x RepoTwo/scripts"
               sh './generate-config-files.sh'
 }
     }
