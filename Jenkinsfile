@@ -11,7 +11,7 @@ node() {
     }
         stage('Generate Config Files') {
             dir ('RepoTwo/scripts') { 
-              './generate-config-files.sh'
+              sh './generate-config-files.sh'
 }
     }
 }
