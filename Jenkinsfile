@@ -1,4 +1,4 @@
-node {
+node stage('configFile Plugin'){
     dir('RepoOne') {
         git url: 'https://github.com/abdulalimi/test-repo.git'
     }
