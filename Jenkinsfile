@@ -13,6 +13,7 @@ def getAWSProfile(String env) {
 
 node() {
         stage('Checkout Source') {
+            deleteDir()
             checkout scm
             
         dir('RepoOne') {
@@ -37,9 +38,4 @@ node() {
               sh './push_to_s3.sh'
 }
     }
-  post {
-    always {
-      deleteDir()
-    }
-  }
 }
