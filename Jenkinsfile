@@ -37,4 +37,9 @@ node() {
               sh './push_to_s3.sh'
 }
     }
+  post {
+    always {
+      cleanWs()
+    }
+  }
 }
