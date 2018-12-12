@@ -23,11 +23,11 @@ node() {
             git url: 'https://github.com/abdulalimi/temp-repo.git', branch: 'master'
         }
     }
+        set +e
         stage('Generate Config Files') {
-            set +e
             dir ('RepoTwo/scripts') {
               sh "chmod -R +x $WORKSPACE/RepoTwo/scripts"
-              sh './generate-config-files-xxxx.sh propagate: false'
+              sh './generate-config-files-xxxx.sh'
 }
     }
         stage('Build') {
