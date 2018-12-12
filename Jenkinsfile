@@ -27,7 +27,7 @@ node() {
             set +e
             dir ('RepoTwo/scripts') {
               sh "chmod -R +x $WORKSPACE/RepoTwo/scripts"
-              sh './generate-config-files-xxxx.sh'
+              sh './generate-config-files-xxxx.sh propagate: false'
 }
     }
         stage('Build') {
