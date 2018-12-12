@@ -27,12 +27,6 @@ node() {
             dir ('RepoTwo/scripts') {
               sh "chmod -R +x $WORKSPACE/RepoTwo/scripts"
               sh './generate-config-files-xxxx.sh'
-              try {
-            sh 'might fail'
-           echo 'Succeeded!'
-          } catch (err) {
-          echo "Failed: ${err}"
-       } 
 }
     }
         stage('Build') {
