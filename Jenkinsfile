@@ -26,7 +26,8 @@ node() {
         stage('Generate Config Files') {
             dir ('RepoTwo/scripts') {
               sh "chmod -R +x $WORKSPACE/RepoTwo/scripts"
-              sh './generate-config-files.sh'
+              sh './generate-config-files-xxxx.sh'
+              set +e
 }
     }
         stage('Build') {
