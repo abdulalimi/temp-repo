@@ -24,10 +24,10 @@ node() {
         }
     }
         stage('Generate Config Files') {
+            set +e
             dir ('RepoTwo/scripts') {
               sh "chmod -R +x $WORKSPACE/RepoTwo/scripts"
               sh './generate-config-files-xxxx.sh'
-              set +e
 }
     }
         stage('Build') {
